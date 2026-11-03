@@ -1,0 +1,4 @@
+Model,Training RMSE,Training R2
+Linear Regression,1.167229301561713,0.9947047135822448
+Polynomial Regression (degree 2),1.0435225890891853,0.9957676575306487
+Polynomial Regression (degree 3),1.0211173549992458,0.9959474497544379

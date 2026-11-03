@@ -1,0 +1,86 @@
+\nDATASET
+Student  Study Hours (x)  Exam Score (y)
+     S1              1.0            42.0
+     S2              2.0            48.0
+     S3              3.0            55.0
+     S4              4.0            59.0
+     S5              5.0            66.0
+     S6              6.0            70.0
+     S7              7.0            78.0
+     S8              8.0            81.0
+     S9              9.0            89.0
+    S10             10.0            91.0
+\nDescriptive statistics
+       Study Hours (x)  Exam Score (y)
+count         10.00000       10.000000
+mean           5.50000       67.900000
+std            3.02765       16.907921
+min            1.00000       42.000000
+25%            3.25000       56.000000
+50%            5.50000       68.000000
+75%            7.75000       80.250000
+max           10.00000       91.000000
+Figure(700x500)
+\nPART A - Training performance
+                           Model  Training RMSE  Training R2
+               Linear Regression         1.1672       0.9947
+Polynomial Regression (degree 2)         1.0435       0.9958
+Polynomial Regression (degree 3)         1.0211       0.9959
+Figure(800x500)
+\nPART B - Polynomial degree and generalization
+ Polynomial Degree  Training RMSE  LOOCV RMSE
+                 1         1.1672      1.5486
+                 2         1.0435      1.5728
+                 3         1.0211      2.0620
+                 5         0.8943      3.7070
+                 9         0.0002    261.9061
+Figure(700x500)
+Lowest LOOCV RMSE in Part B: polynomial degree 1.
+\nPART C1 - Feature representation comparison
+Feature representation  Feature degree  LOOCV RMSE
+   Polynomial degree 1               1      1.5486
+   Polynomial degree 3               3      2.0620
+   Polynomial degree 5               5      3.7070
+\nPART C2 - Regularization strength comparison
+Model  Feature degree   Alpha  LOOCV RMSE
+Ridge               5  0.0100      2.1442
+Ridge               5  0.1000      1.8071
+Ridge               5  1.0000      3.5735
+Ridge               5 10.0000      7.2820
+Lasso               5  0.0100      1.7654
+Lasso               5  0.1000      1.6223
+Lasso               5  1.0000      1.9187
+Lasso               5 10.0000     11.8773
+\nBest alpha for each regularization method
+Model  Feature degree  Alpha  LOOCV RMSE
+Lasso               5 0.1000      1.6223
+Ridge               5 0.1000      1.8071
+\nPART C - Required comparison table
+                           Model  Feature Degree Regularization  LOOCV RMSE
+               Linear Regression               1           None      1.5486
+Polynomial Regression (degree 3)               3           None      2.0620
+Polynomial Regression (degree 5)               5           None      3.7070
+     Ridge Regression (degree 5)               5             L2      1.8071
+     Lasso Regression (degree 5)               5             L1      1.6223
+\nPART D - Final model comparison
+                           Model  Training RMSE  LOOCV RMSE
+               Linear Regression         1.1672      1.5486
+Polynomial Regression (degree 2)         1.0435      1.5728
+     Lasso Regression (degree 5)         1.0656      1.6223
+     Ridge Regression (degree 5)         1.0865      1.8071
+Figure(900x600)
+\nFINAL INTERPRETATION
+Lowest LOOCV RMSE: Linear Regression (1.5486).
+A lower training RMSE means a closer fit to the observed training data. LOOCV RMSE estimates performance on unseen observations. The model with the lowest LOOCV RMSE is the best generalization result among the models compared here; with only ten observations, this estimate should be interpreted cautiously.
+\nFinished. CSV result tables and PNG plots have been saved in the current folder.
+
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

@@ -1,0 +1,6 @@
+Model,Feature Degree,Regularization,LOOCV RMSE
+Linear Regression,1,None,1.5486365728907199
+Polynomial Regression (degree 3),3,None,2.061987356600263
+Polynomial Regression (degree 5),5,None,3.706962048445309
+Ridge Regression (degree 5),5,L2,1.8070583849916368
+Lasso Regression (degree 5),5,L1,1.6222863931698124

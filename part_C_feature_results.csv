@@ -1,0 +1,4 @@
+Feature representation,Feature degree,LOOCV RMSE
+Polynomial degree 1,1,1.5486365728907199
+Polynomial degree 3,3,2.061987356600263
+Polynomial degree 5,5,3.706962048445309
